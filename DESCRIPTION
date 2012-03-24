@@ -3,7 +3,7 @@ Type: Package
 Title: Citations for knitr markdown files
 Authors@R: person("Carl", "Boettiger", role=c("aut", "cre"),
         email="cboettig@gmail.com")
-Version: 0.3-2
+Version: 0.3-3
 Date: 2012-03-24
 Description: While traditional Sweave documents can take advantage of
         LaTeX citation tools, knitr also allows users to combine the
@@ -17,11 +17,11 @@ Imports: xtable, RCurl, XML
 Suggests: testthat
 License: CC0
 Collate: 'functiontable.R' 'bibliography.R' 'formatref.R' 'ref.R'
-        'cite.R' 'create_bibkey.R' 'citep.R' 'citet.R' 'cleanbib.R'
-        'read.bibtex.R' 'write.bibtex.R' 'init_knitbib.R'
-        'print_rdfa.R' 'write_cache.R' 'newbib.R' 'zzz.R'
-Packaged: 2013-02-04 05:05:05 UTC; cboettig
+        'cite.R' 'create_bibkey.R' 'citep.R' 'citet.R' 'read.bibtex.R'
+        'write.bibtex.R' 'init_knitbib.R' 'print_rdfa.R'
+        'write_cache.R' 'newbib.R' 'zzz.R'
+Packaged: 2013-02-06 20:57:35 UTC; cboettig
 Author: Carl Boettiger [aut, cre]
 Maintainer: Carl Boettiger <cboettig@gmail.com>
 Repository: CRAN
-Date/Publication: 2013-02-04 07:52:16
+Date/Publication: 2013-02-07 07:42:47
