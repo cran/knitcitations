@@ -2,7 +2,23 @@ NEWS
 ====
 
 
+v0.3-1
+------
+
+* Switched to handling citation data using environment rather than an external bibfile.
+  This does not refer to the handling of user-provided bibtex files as input data,
+  which are supported as before, but changes only the backend management of that data.
+  The external bibtex file method can be switched back on by setting 
+  `options("bibtex_data" = TRUE)`.  
+* There is no need to call `print(bibliography, "html")`, one can simply call 
+  `bibliography()` or `bibliography("html")`. Sort is still an option, other 
+  options that were for internal use (`debug`, `remove_duplicates`) are 
+  removed as they are no longer necessary.  
+* Several new functions have been added to handle the new methods.  
+
+
 v0.2-0
+------
 
 * Fix vignette error that prevents knitr 1.0 submission
 * Fixed errors on installing package and lack of entries in bibliography
