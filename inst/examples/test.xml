@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<modsCollection xmlns="http://www.loc.gov/mods/v3">
+<mods ID="bibtex">
+    <titleInfo>
+        <title>bibtex</title>
+        <subTitle>bibtex parser</subTitle>
+    </titleInfo>
+    <name type="personal">
+        <namePart type="given">Romain</namePart>
+        <namePart type="family">Francois</namePart>
+        <role>
+            <roleTerm authority="marcrelator" type="text">author</roleTerm>
+        </role>
+    </name>
+    <originInfo>
+        <dateIssued>2011</dateIssued>
+    </originInfo>
+    <typeOfResource>text</typeOfResource>
+    <genre authority="marcgt">instruction</genre>
+    <note>R package version 0.3-0</note>
+    <identifier type="citekey">bibtex</identifier>
+    <location>
+        <url>http://CRAN.R-project.org/package=bibtex</url>
+    </location>
+</mods>
+<mods ID="knitr">
+    <titleInfo>
+        <title>knitr</title>
+        <subTitle>A general-purpose package for dynamic report generation in R</subTitle>
+    </titleInfo>
+    <name type="personal">
+        <namePart type="given">Yihui</namePart>
+        <namePart type="family">Xie</namePart>
+        <role>
+            <roleTerm authority="marcrelator" type="text">author</roleTerm>
+        </role>
+    </name>
+    <originInfo>
+        <dateIssued>2012</dateIssued>
+    </originInfo>
+    <typeOfResource>text</typeOfResource>
+    <genre authority="marcgt">instruction</genre>
+    <note>R package version 0.8</note>
+    <identifier type="citekey">knitr</identifier>
+    <location>
+        <url>http://yihui.name/knitr/</url>
+    </location>
+</mods>
+<mods ID="knitcitations">
+    <titleInfo>
+        <title>knitcitations</title>
+        <subTitle>Citations for knitr markdown files</subTitle>
+    </titleInfo>
+    <name type="personal">
+        <namePart type="given">Carl</namePart>
+        <namePart type="family">Boettiger</namePart>
+        <role>
+            <roleTerm authority="marcrelator" type="text">author</roleTerm>
+        </role>
+    </name>
+    <originInfo>
+        <dateIssued>2012</dateIssued>
+    </originInfo>
+    <typeOfResource>text</typeOfResource>
+    <genre authority="marcgt">instruction</genre>
+    <note>R package version 0.1-0</note>
+    <identifier type="citekey">knitcitations</identifier>
+    <location>
+        <url>https://github.com/cboettig/knitcitations</url>
+    </location>
+</mods>
+</modsCollection>

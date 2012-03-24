@@ -2,11 +2,16 @@
 \alias{citet}
 \title{Add a textual citation}
 \usage{
-  citet(x)
+  citet(x, semantic = FALSE,
+    cito_reason = c("cites", "citesAsAuthority", "citesAsMetadataDocument", "citesAsSourceDocument", "citesForInformation", "isCitedBy", "obtainsBackgroundFrom", "sharesAuthorsWith", "usesDataFrom", "usesMethodIn", "confirms", "credits", "extends", "obtainsSupportFrom", "supports", "updates", "corrects", "critiques", "disagreesWith", "qualifies", "refutes", "discusses", "reviews"))
 }
 \arguments{
   \item{x}{a doi or list of dois, or a bibentry (or list of
   bibentries)}
+
+  \item{cito_reason}{Semantic reason for the citation}
+
+  \item{semantic}{logical, use semantic annotations?}
 }
 \value{
   a text inline citation

@@ -23,18 +23,20 @@
 #' 
 #' @export
 bibliography <- function(style="html", erase=FALSE, sort=FALSE, addkeys=FALSE, debug=FALSE){
-  out <- getOption("works_cited")
-  if(!debug)
-    out <- unique.bibentry(out)
-  if(addkeys) 
-    out <- create_bibkeys(out) 
-  if(sort){   
-    ordering <- sort(names(out))
-    out <- out[ordering]
+  out <- read.bibtex("knitcitations.bib")
+  if(length(out)>0){
+    if(!debug)
+      out <- unique.bibentry(out)
+    if(addkeys) 
+      out <- create_bibkeys(out) 
+    if(sort){   
+      ordering <- sort(names(out))
+      out <- out[ordering]
+    }
   }
   if(erase)
     cleanbib()
-  invisible(I(print(out, style=style)))
+  invisible(output <- print(out, style))
 }
 
 
