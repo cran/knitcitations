@@ -1,6 +1,83 @@
 NEWS 
 ====
 
+For more fine-grained list of changes or to report a bug, consult 
+
+* [The issues log](https://github.com/cboettig/knitcitations/issues)
+* [The commit log](https://github.com/cboettig/knitcitations/commits/master)
+
+Versioning
+----------
+
+Releases will be numbered with the following semantic versioning format:
+
+<major>.<minor>.<patch>
+
+And constructed with the following guidelines:
+
+* Breaking backward compatibility bumps the major (and resets the minor and patch)
+* New additions without breaking backward compatibility bumps the minor (and resets the patch)
+* Bug fixes and misc changes bumps the patch
+
+For more information on SemVer, please visit http://semver.org/.
+
+
+v0.4-3
+------
+
+* Some bugfixes to bib_format method
+* tooltip javascript uses class 'showtooltip' rather than rel='tooltip' to avoid conflicting semantic meaning and styling and to avoid clashes with existing 'tooltip' class in twitter bootstrap
+* cito links fix href and use rel instead of property
+
+
+v0.4-2
+------
+
+* Testing out `bib_format` method to change order of citation elements in reference list
+
+v0.4-1
+------
+
+* Fixes Issue [#27](https://github.com/cboettig/knitcitations/issues/27) in rdfa printing
+* Nicer markdown printing
+* keep each function in separate file
+
+v0.4-0
+------
+
+### Major changes
+
+* Support for citations by URL.  Paste the full URL of any academic
+  journal or other webpage.  Uses the Greycite API 
+* Introduces linked inline citations as an option (previously active
+  only for CITO links).  Inline citation text will be linked directly
+  to the article by DOI or URL.  Toggle on or off using cite_options
+  globally, or passing `linked=FALSE` to the calls to `citet` or `citep`
+* Introduces tooltips option. Mouse over an inline citation and see
+  the full citation information.  * Introduces `cite_options`, to toggle
+  certain settings such as tooltips, linked inline text,
+
+
+### Minor changes
+
+* in-line link will use URL if a DOI is not found
+* `cite` is now exported to the namespace.  Useful to return a bibentry object given a DOI or URL.  
+
+
+v0.3-5
+------
+
+* Fix formatting of parenthetical citations (bug introduced previously converted these to citet format)
+* Additional documentation
+* Install instructions for development version added to README
+
+v0.3-4
+------
+
+* Avoid dropped citations caused by redundant key collisions, closes #21
+
+
+
 
 v0.3-3
 ------

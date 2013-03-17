@@ -2,10 +2,19 @@
 #'
 #' @param x a doi or list of dois, or a bibentry (or list of bibentries)
 #' @param inline_format a function for formating the inline citation, defaults to authoryear_t
-#' @param ... additional arguments that are bassed to \code{\link{citet}}.  
+#' @param format_inline_fn function to format a single inline citation
+#' @param ... additional arguments passed to citet, see \code{\link{citet}} for details
 #' @return a parenthetical inline citation
 #' @details Stores the full citation in a "works_cited" list,
 #' which can be printed with \code{\link{bibliography}}
+#' A variety of reasons for the citation can be provided following the
+#' CiTO ontology: 
+#' c("cites","citesAsAuthority", "citesAsMetadataDocument",
+#'   "citesAsSourceDocument","citesForInformation",
+#'   "isCitedBy","obtainsBackgroundFrom", "sharesAuthorsWith", "usesDataFrom",
+#'   "usesMethodIn", "confirms", "credits", "extends", "obtainsSupportFrom",
+#'   "supports", "updates", "corrects", "critiques", "disagreesWith",
+#'   "qualifies", "refutes", "discusses", "reviews")
 #' @export
 #' @import knitr
 #' @examples
@@ -22,22 +31,11 @@
 #' citep(c(Halpern2006="10.1111/j.1461-0248.2005.00827.x"))
 #' citep("Halpern2006")
 #' 
-citep <- function(x, inline_format = authoryear_p, ...) 
-  citet(x, inline_format = inline_format, ...) 
-
-## Helper function
-
-#' format the author and year parenthetically
-#' @param entry a bibentry
-#' @return the author-year citation
-authoryear_p <- function(entry){
-    n <- length(entry$author)
-    if(n==1)
-      sprintf("%s, %s", entry$author$family, entry$year)
-    else if(n==2)
-      sprintf("%s & %s, %s", entry$author[[1]]$family, entry$author[[2]]$family, entry$year)
-    else if(n>2)
-      sprintf("%s _et. al._ %s", entry$author[[1]]$family, entry$year)
+citep <- function(x, ..., 
+                  format_inline_fn = format_authoryear_p, 
+                  inline_format = authoryear_p){
+  text <- citet(x, ..., 
+                format_inline_fn = format_inline_fn,
+                inline_format = inline_format) 
+  paste("(", text, ")", sep="", collapse=";")
 }
-
-

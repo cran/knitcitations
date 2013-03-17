@@ -2,7 +2,8 @@
 \alias{citep}
 \title{Add a paranthetical citation}
 \usage{
-  citep(x, inline_format = authoryear_p, ...)
+  citep(x, ..., format_inline_fn = format_authoryear_p,
+    inline_format = authoryear_p)
 }
 \arguments{
   \item{x}{a doi or list of dois, or a bibentry (or list of
@@ -11,8 +12,11 @@
   \item{inline_format}{a function for formating the inline
   citation, defaults to authoryear_t}
 
-  \item{...}{additional arguments that are bassed to
-  \code{\link{citet}}.}
+  \item{format_inline_fn}{function to format a single
+  inline citation}
+
+  \item{...}{additional arguments passed to citet, see
+  \code{\link{citet}} for details}
 }
 \value{
   a parenthetical inline citation
@@ -22,7 +26,16 @@
 }
 \details{
   Stores the full citation in a "works_cited" list, which
-  can be printed with \code{\link{bibliography}}
+  can be printed with \code{\link{bibliography}} A variety
+  of reasons for the citation can be provided following the
+  CiTO ontology: c("cites","citesAsAuthority",
+  "citesAsMetadataDocument",
+  "citesAsSourceDocument","citesForInformation",
+  "isCitedBy","obtainsBackgroundFrom", "sharesAuthorsWith",
+  "usesDataFrom", "usesMethodIn", "confirms", "credits",
+  "extends", "obtainsSupportFrom", "supports", "updates",
+  "corrects", "critiques", "disagreesWith", "qualifies",
+  "refutes", "discusses", "reviews")
 }
 \examples{
 library(knitcitations)
