@@ -1,10 +1,12 @@
-#' print method for markdown format
+#' print method for html format 
+#' 
+#' The built-in html format sucks, with unclosed p tags and mixed capital tags 
 #' @param bib a bibentry object containing one or more citations
-#' @param ordering a character list of the order in which information should
+#' @param ordering a character list of the order in which information should 
 #' be printed 
 #' @details An internal method used by the \code{\link{bibliography}} function
 #' @keywords internal
-print_markdown <- function(bib, ordering =  
+print_html <- function(bib, ordering =  
                        c("authors", "year", "title", "journal",
                          "volume", "number", "pages", "doi", "uri")){
   ## create individual citations
@@ -19,9 +21,9 @@ print_markdown <- function(bib, ordering =
                paste(" (", r$year, ")", sep="")
 
     journal <- if(!is.null(r$journal))
-      paste(" *", r$journal, "*", sep="")
+      paste(" <em>", r$journal, "</em>", sep="")
     volume <- if(!is.null(r$volume))
-      paste(' **', r$volume, '**', sep="")
+      paste(' <strong>', r$volume, '</strong>', sep="")
     number <- if(!is.null(r$number))
       paste(" (", r$number, ") ", sep="")
 
@@ -33,9 +35,9 @@ print_markdown <- function(bib, ordering =
                 paste('-', pgs[2], sep="")
     pages <- paste(spage, epage, sep="")
     doi  <- if(!is.null(r$doi))
-      paste(' [',  r$doi, '](http://dx.doi.org/', r$doi, ')', sep="")
+      paste(' <a href="http://dx.doi.org/',  r$doi, '">', r$doi, '</a>', sep="")
     uri <- if(is.null(r$doi) && !is.null(r$url))
-      paste(' [',  r$url, '](', r$url, ')', sep="")
+      paste(' <a href="',  r$url, '">', r$url, '</a>', sep="")
 
     bibline <- bib_format(ordering, authors, year, 
                           title, journal, volume, 

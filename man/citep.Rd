@@ -3,7 +3,7 @@
 \title{Add a paranthetical citation}
 \usage{
   citep(x, ..., format_inline_fn = format_authoryear_p,
-    inline_format = authoryear_p)
+    inline_format = authoryear_p, page = NULL)
 }
 \arguments{
   \item{x}{a doi or list of dois, or a bibentry (or list of
@@ -17,6 +17,11 @@
 
   \item{...}{additional arguments passed to citet, see
   \code{\link{citet}} for details}
+
+  \item{page}{optional page or page range that can be given
+  as extra text.  Page ranges should be separated by
+  hyphen, giving "pp.", while single page returns as "p."
+  followed by page number.}
 }
 \value{
   a parenthetical inline citation
@@ -38,7 +43,9 @@
   "refutes", "discusses", "reviews")
 }
 \examples{
+\dontrun{
 library(knitcitations)
+ ## (requires internet connection)
  citep("10.3998/3336451.0009.101")
  ## Read in the bibtex information for some packages:
  knitr <- citation("knitr")
@@ -50,5 +57,6 @@ library(knitcitations)
 ## Assign a citation key to a doi and then use it later:
 citep(c(Halpern2006="10.1111/j.1461-0248.2005.00827.x"))
 citep("Halpern2006")
+}
 }
 

@@ -1,8 +1,8 @@
-\name{print_markdown}
-\alias{print_markdown}
-\title{print method for markdown format}
+\name{print_html}
+\alias{print_html}
+\title{print method for html format}
 \usage{
-  print_markdown(bib,
+  print_html(bib,
     ordering = c("authors", "year", "title", "journal", 
                  "volume", "number", "pages", "doi", "uri"))
 }
@@ -14,7 +14,8 @@
   information should be printed}
 }
 \description{
-  print method for markdown format
+  The built-in html format sucks, with unclosed p tags and
+  mixed capital tags
 }
 \details{
   An internal method used by the \code{\link{bibliography}}
