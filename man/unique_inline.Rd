@@ -1,8 +1,8 @@
 \name{unique_inline}
 \alias{unique_inline}
-\title{Helper function to generate a unique inline citation format}
+\title{Helper function to generate a unique inline citation format (called by cite)}
 \usage{
-  unique_inline(entry, format_inline_fn, i = 2)
+unique_inline(entry, format_inline_fn, i = 2)
 }
 \arguments{
   \item{entry}{a bibentry type object}
