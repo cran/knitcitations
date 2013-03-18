@@ -10,16 +10,15 @@
 #'  to generate a unique pattern. 
 #' @return an updated bibentry that now has a key value and is named using
 #'  its key
-#' @examples
+#' @examples \donttest{
 #'  r <- ref("10.3998/3336451.0009.101")
 #'  print(r, "Bibtex")
-#'  r <- knitcitations:::create_bibkey(r)
 #' ## Notice it now has a key entry
 #'  print(r, "Bibtex")
-#'   
+#'   }
 #' @keywords internal
 
-create_bibkey <- function(bibentry, key=NULL, current=NULL){
+create_bibkey <- function(bibentry, key=NULL, current=NULL, add_numeral=FALSE){
     
     # If the citation has a key already, please just use it.
     if(!(is.null(bibentry$key)))
@@ -34,7 +33,8 @@ create_bibkey <- function(bibentry, key=NULL, current=NULL){
     }
     names(bibentry) <- key
     bibentry$key <- key
-    bibentry$numeral <- get_numeral(bibentry, current)
+    if(add_numeral)
+      bibentry$numeral <- get_numeral(bibentry, current)
 
   bibentry
 }

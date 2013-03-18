@@ -1,14 +1,10 @@
 #' Add a paranthetical citation
 #'
 #' @param x a doi or list of dois, or a bibentry (or list of bibentries)
-#' @param inline_format a function for formating the inline citation, 
-#'  defaults to authoryear_t
-#' @param format_inline_fn function to format a single inline citation
 #' @param ... additional arguments passed to citet, see \code{\link{citet}} 
 #'  for details
-#' @param page optional page or page range that can be given as extra text.
-#'   Page ranges should be separated by hyphen, giving "pp.", while single 
-#'   page returns as "p." followed by page number.  
+#' @param citation_format name of the citation format to use.  Currently
+#'  available options are "pandoc" or "compatibility".  
 #' @return a parenthetical inline citation
 #' @details Stores the full citation in a "works_cited" list,
 #' which can be printed with \code{\link{bibliography}}
@@ -38,15 +34,17 @@
 #' citep("Halpern2006")
 #' }
 citep <- function(x, ..., 
-                  format_inline_fn = format_authoryear_p, 
-                  inline_format = authoryear_p,
-                  page = NULL){
-  text <- citet(x, ..., 
-                format_inline_fn = format_inline_fn,
-                inline_format = inline_format) 
-  if(!is.null(page)){
-    pgs <- ifelse(grepl("-", page), "pp.", "p.")
-    page <- paste(",", pgs, page)
+                  citation_format = getOption("citation_format", "compatibility")){
+  if(citation_format != "pandoc"){
+    text <- citet(x, ...) 
+    paste("(", text, page, ")", sep="", collapse=";")
+  } else {
+
+## Pandoc format 
+
+    paste0("[",citet(x, ..., citation_format = citation_format),"]")
+
   }
-  paste("(", text, page, ")", sep="", collapse=";")
+
 }
+

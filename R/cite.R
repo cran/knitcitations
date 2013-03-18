@@ -1,21 +1,6 @@
-#' Add a citation (internal for citet and citep) 
-#'
-#' @param x a doi or list of dois, or a bibentry (or list of bibentries)
-#' @param bibtex internal logical indicating if we use a cache or 
-#'  external bibtex file
-#' @param format_inline_fn a function which will create the inline 
-#'  citation format (stored with the entry to avoid non-unique citation
-#'  styles, e.g. Boettiger 2012a, Boettiger 2012b.)
-#' @return a parenthetical inline citation
-#' @details Stores the full citation in a "works_cited" list,
-#'  which can be printed with \code{\link{bibliography}}
-#' @import knitr
-#' @export
-#' @examples
-#' citep("10.3998/3336451.0009.101")
 cite <- function(x, 
                  bibtex = get("bibtex_data", envir=knitcitations_options), 
-                 format_inline_fn = format_authoryear_p){
+                 format_inline_fn = NULL){
 
   # Initialize the works cited list (or verify that it is already initialized)
   bibtex = knitcitations_data(bibtex = bibtex) 
@@ -63,15 +48,16 @@ cite <- function(x,
       entry <- create_bibkey(entry, key=key, current=current) # Create a bibkey for it
 
       ## Generate the inline citation  
-      if(is.null(entry$inline)){
-        entry$inline <- format_inline_fn(entry)
-        entry <- unique_inline(entry, format_inline_fn)
+      if(!is.null(format_inline_fn)){
+        if(is.null(entry$inline)){
+          entry$inline <- format_inline_fn(entry)
+          entry <- unique_inline(entry, format_inline_fn)
+        }
       }
-
 
       ### Now enter the citation into the bibliographic list ###
       if(!is(entry, "bibentry")){ 
-        entry <- I("?")  # make anything we cannot parse an unkown
+        entry <- I("???")  # make anything we cannot parse an unkown
       } else {
          ## Check if we already have this key entered
          m <- match(names(entry), existing)  
@@ -90,3 +76,21 @@ cite <- function(x,
 }
 
 
+#' Add a citation 
+#'
+#' @param x a doi or list of dois, or a bibentry (or list of bibentries)
+#' @param bibtex internal logical indicating if we use a cache or 
+#'  external bibtex file
+#' @param format_inline_fn a function which will create the inline 
+#'  citation format (stored with the entry to avoid non-unique citation
+#'  styles, e.g. Boettiger 2012a, Boettiger 2012b.)
+#' @return a parenthetical inline citation
+#' @details Stores the full citation in a "works_cited" list,
+#'  which can be printed with \code{\link{bibliography}}
+#' @import knitr
+#' @examples \donttest{
+#' citep("10.3998/3336451.0009.101")
+#' }
+#' 
+#' @export
+kcite <- cite
