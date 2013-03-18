@@ -22,6 +22,14 @@ And constructed with the following guidelines:
 For more information on SemVer, please visit http://semver.org/.
 
 
+v0.4-4
+------
+
+* Depends R (>= 2.15.0)
+* Released to CRAN
+* Minor changes: replace paste0 with paste, sep=""
+
+
 v0.4-3
 ------
 

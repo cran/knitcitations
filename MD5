@@ -1,8 +1,8 @@
-71f03ab30f1df1727c28fcc19ee222d2 *DESCRIPTION
+eda01f3c49e0febaa1c93e6c94399433 *DESCRIPTION
 fda06cf765db7d2425f34216e2296e30 *NAMESPACE
-6738bd4dec3cdf62d8ff072e309f4304 *NEWS
+75752bb5ea512611d7190b0c1615a1f4 *NEWS
 3534b4e4a0301276db09a99352007e3f *R/bib_format.R
-c1f9b484777061a9a863a3f9a4de3658 *R/bibliography.R
+003f17f7c0bad999e38124d4e074ca75 *R/bibliography.R
 238606099399f8704132ea37bdc63746 *R/cite.R
 cae96e89266436e2ff77680e7162e2ca *R/cite_options.R
 b161dec8e09f6dc63efa3265d4282844 *R/citep.R
@@ -14,8 +14,8 @@ f39d7b9a4fe8dd98b0001eb727a21dea *R/functiontable.R
 72e477f3eb1bfe75cd387d631b98aff7 *R/init_knitbib.R
 e142941a8450587f8271a92d22aab698 *R/inline_formats.R
 e4c5a19f480aa7dd5832d03705eb340f *R/newbib.R
-f16abf9dc393edc3241f2e8b1a54633e *R/print_markdown.R
-59f26a66cca97af0c530ffcfd903236a *R/print_rdfa.R
+446d39a9fc3bdcd799bd72f67f385078 *R/print_markdown.R
+e56073253cd7d8cda82da0e385824ad3 *R/print_rdfa.R
 9992f19c502e811c1ed55bbca66ca126 *R/read.bibtex.R
 d42f5a1364af0f5cee83a3720069dc33 *R/ref.R
 31255b4e47dc0782a0b7141f725a7298 *R/url_regexpr.R
