@@ -1,6 +1,7 @@
-d369a6462f55d6d90b7186be50a57e74 *DESCRIPTION
+09818c604311dd6aa542868a2ada907b *DESCRIPTION
+777c709424a60447d6c63df905a37c31 *LICENSE
 1dba595f4bb672cadf56f2fea9cecb95 *NAMESPACE
-2aec603a4058d4585245acfdb4d71005 *NEWS
+ab43b9ee5f1c0696d81961ce8c1f5705 *NEWS
 ce968d2aa99e5566bac853604f92402e *R/bib_metadata.R
 cce063701de4f8960c1078d68b768b31 *R/bibliography.R
 f4f794c274bf6bfbd963c0a39dfc8805 *R/cite_options.R
@@ -12,11 +13,11 @@ f75b9e25761cbc4461ec37f2474aa6da *R/knitcitations.R
 82654d33f1e3bb52ab1802379d0baa90 *R/record_as_cited.R
 31255b4e47dc0782a0b7141f725a7298 *R/url_regexpr.R
 0eb98ab6fad1d97918cc6f498001b3ba *R/write.bibtex.R
-92bfabc675a1b18ae4dbbdb3c98c832e *README.md
-64f0e2c68f3b66bedad8bd3afd7508e6 *build/vignette.rds
+ee3842698f7c16ee5100f9724b72a263 *README.md
+cecb7e254612c16c2ec679f3e6b2d2a5 *build/vignette.rds
 ff2992db1a739cebfdbf25cf75cbc826 *inst/doc/tutorial.R
-ce92be3af53a0dc7d25a564a4a63ceef *inst/doc/tutorial.Rmd
-b25a88971cdc9e587b303647d2e2760a *inst/doc/tutorial.pdf
+2a105c10394fac7af0e00ca944c7cdee *inst/doc/tutorial.Rmd
+66f4fc550e3297d4b0d2d008f691d6da *inst/doc/tutorial.pdf
 330e9312e3c717dfed3e2114e92219ea *inst/examples/OAI.Rmd
 43d29f9a750416b0f2e5f21fb39425f3 *inst/examples/README.Rmd
 f69f164356d6fc22c6e589c979fc23df *inst/examples/citations.Rmd
@@ -36,6 +37,6 @@ b91f5f10c457c60bfe9cbbf689fad641 *man/write.bibtex.Rd
 e2cb5d1178b85c48713f8eeb5e9355ac *tests/testthat.R
 66588789be013479870549cb1cd83787 *tests/testthat/cite.R
 8dbb19b7bc19c2114d203becb2356453 *tests/testthat/ref.R
-ce92be3af53a0dc7d25a564a4a63ceef *vignettes/tutorial.Rmd
+2a105c10394fac7af0e00ca944c7cdee *vignettes/tutorial.Rmd
 91db1fc8e6201abcb3f91b73218758bc *vignettes/tutorial.html
-92bfabc675a1b18ae4dbbdb3c98c832e *vignettes/tutorial.md
+ee3842698f7c16ee5100f9724b72a263 *vignettes/tutorial.md
