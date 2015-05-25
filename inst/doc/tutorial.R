@@ -10,6 +10,6 @@ options("citation_format" = "pandoc")
 citep(citation("knitr"))
 citet("10.1098/rspb.2013.1372")
 
-## ----, message=FALSE-----------------------------------------------------
+## ---- message=FALSE------------------------------------------------------
 write.bibtex(file="references.bib")
 
