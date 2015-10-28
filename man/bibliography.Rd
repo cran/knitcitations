@@ -26,7 +26,7 @@ NOTE that csl formatting works only if reference has a DOI.
 For non-trivial bibliographies, knitcitations recommends authors use
 pandoc format, see cite_options(cite_format="pandoc"), and allow pandoc
 to generate the references list rather than rely on the bibliography() function.
-Pandoc has rich CSL support using any provided CSL file (see Pnadoc documentation
+Pandoc has rich CSL support using any provided CSL file (see Pandoc documentation
 for details) and is integrated into recent version of RStudio.
 }
 \examples{
