@@ -15,7 +15,7 @@
 #' @return a list of works cited 
 #' @export
 #' @examples
-#' citet(citation("XML"))
+#' citet(citation("httr"))
 #' citet(citation("digest"))
 #' bibliography()
 #' bibliography(sorting = 'ynt') # sort by year, then name, title
@@ -29,20 +29,19 @@
 #' bibliography(style="nature")
 #' bibliography(style="nature", sorting = 'ynt') # obeys sorting rule 
 #' }
-bibliography <- function(..., style=NULL)
+bibliography <- function(style=NULL, ...)
 {
   bibs <- get_bib()
-  NoCite(bibs) 
+  NoCite(bibs)
 
-  if(!is.null(style)){
+  if(is.null(style)){
     BibOptions(...)
     refs <- sapply(sort(bibs), csl_formatting)
-    cat(refs, sep="\n")
+    #cat(refs, sep="\n")
   } else {
-    PrintBibliography(bibs, .opts=list(...))
+    PrintBibliography(bibs, .opts=list(style=style,...))
   }
   invisible(bibs)
-
 }
 
 

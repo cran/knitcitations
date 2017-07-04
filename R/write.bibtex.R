@@ -12,7 +12,7 @@
 #' @examples
 #'  write.bibtex(c(citation("knitr"), 
 #'                 citation("knitcitations"), 
-#'                 citation("RCurl")))
+#'                 citation("httr")))
 #'  bib <- read.bibtex("knitcitations.bib")
 #' @export
 #' @seealso read.bib citep citet
@@ -32,7 +32,18 @@ write.bibtex <- function(entry = NULL,
   
   }
 
-  WriteBib(entry, file=file, append=append, ...)
+  keys <- vapply(
+    entry,
+    function(e) {
+      key <- e$key
+      if (is.null(key))
+        key <- NA_character_
+      key
+    },
+    character(1L)
+  )
+
+  WriteBib(entry[order(keys)], file=file, append=append, ...)
 }
 
 
